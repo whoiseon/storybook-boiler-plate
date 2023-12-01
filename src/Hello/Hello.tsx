@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Hello = ({ name, big, onHello, onBye }) => {
+interface HelloProps {
+  name: string;
+  big?: boolean;
+  onHello?: () => void;
+  onBye?: () => void;
+
+}
+
+const Hello = ({ name, big = false, onHello, onBye }: HelloProps) => {
   return (
     <div>
       {big ? <h1>안녕하세요, {name}!</h1> : <h2>안녕하세요, {name}!</h2>}
